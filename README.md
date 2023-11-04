@@ -6,32 +6,32 @@ To write a C program to implement Bankers Algorithm to avoid Deadlock.
 # ALGORITHM:
 
 ### Step 1: Initialize Data
-Set n to 5 (number of processes) and m to 3 (number of resource types).
-Initialize the alloc matrix with the allocation of resources to processes.
-Initialize the max matrix with the maximum demand of resources for each process.
-Initialize the avail list with the available resources.
-Initialize arrays f, ans, and ind to manage process states and safe sequence.
+* Set n to 5 (number of processes) and m to 3 (number of resource types).
+* Initialize the alloc matrix with the allocation of resources to processes.
+* Initialize the max matrix with the maximum demand of resources for each process.
+* Initialize the avail list with the available resources.
+* Initialize arrays f, ans, and ind to manage process states and safe sequence.
 ### Step 2: Initialize Flags and Need Matrix
-Initialize the array f to keep track of whether each process is finished (all initially set to 0).
-Create an empty matrix need to represent the resource needs of each process.
+* Initialize the array f to keep track of whether each process is finished (all initially set to 0).
+* Create an empty matrix need to represent the resource needs of each process.
 ### Step 3: Calculate Need Matrix
-Calculate the need matrix by subtracting the alloc matrix from the max matrix for each process and resource.
+* Calculate the need matrix by subtracting the alloc matrix from the max matrix for each process and resource.
 ### Step 4: Main Loop
-Loop k from 0 to 4 (5 iterations, one for each process).
-Inside the loop:
-Loop through each process i (0 to 4).
-Check if process i is not finished (f[i] == 0).
-Initialize flag to 0.
-Loop through each resource type j (0 to 2).
-Check if the resource need of process i for resource j exceeds the available resource avail[j].
-If it does, set flag to 1 and break out of the inner loop.
-If flag is still 0 (i.e., all resource needs are satisfied), add process i to the ans array and increment ind.
-Update the available resources by adding the allocated resources of process i to avail.
-Mark process i as finished by setting f[i] to 1.
+* Loop k from 0 to 4 (5 iterations, one for each process).
+* Inside the loop:
+* Loop through each process i (0 to 4).
+* Check if process i is not finished (f[i] == 0).
+* Initialize flag to 0.
+* Loop through each resource type j (0 to 2).
+* Check if the resource need of process i for resource j exceeds the available resource avail[j].
+* If it does, set flag to 1 and break out of the inner loop.
+* If flag is still 0 (i.e., all resource needs are satisfied), add process i to the ans array and increment ind.
+* Update the available resources by adding the allocated resources of process i to avail.
+* Mark process i as finished by setting f[i] to 1.
 ### Step 5: Print the SAFE Sequence
-Print "Following is the SAFE Sequence" as a header.
-Loop through the processes in the ans array and print them as the safe sequence, separated by " -> ".
-Print the last process in the sequence.
+* Print "Following is the SAFE Sequence" as a header.
+* Loop through the processes in the ans array and print them as the safe sequence, separated by " -> ".
+* Print the last process in the sequence.
 
 PROGRAM:
 ```
